@@ -1,0 +1,19 @@
+{
+	"name": "react-custom-hubspot-form",
+	"version": "1.0.0",
+	"description": "A React hook to render customizable Hubspot forms.",
+	"keywords": [
+		"react",
+		"hubspot"
+	],
+	"author": "Mitchell Christ <mitchell@human.marketing>",
+	"license": "ISC",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"typescript": "^4.7.4"
+	}
+}
