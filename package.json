@@ -11,8 +11,5 @@
 	"main": "index.js",
 	"dependencies": {
 		"react": "^18.2.0"
-	},
-	"devDependencies": {
-		"@types/react": "^18.0.14"
 	}
 }
