@@ -9,7 +9,7 @@ npm install react-custom-hubspot-form
 
 ## Usage
 
-Basic implementation:
+### Basic implementation:
 
 ```jsx
 import React from 'react'
@@ -40,7 +40,7 @@ export default () => {
 }
 ```
 
-Custom fields:
+### Custom fields:
 
 ```jsx
 const { Fields, Form } = useHubspotForm(/* config */)
@@ -73,7 +73,7 @@ const CustomField = ({ label, value, className, ...props }) => (
 )
 ```
 
-Custom form (and response):
+### Custom form (and response):
 
 ```jsx
 const { onSubmit, response, result, Fields } = useHubspotForm(/* ... */)
