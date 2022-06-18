@@ -76,7 +76,7 @@ const CustomField = ({ label, value, className, ...props }) => (
 ### Custom form (and response)
 
 ```jsx
-const { onSubmit, response, result, Fields } = useHubspotForm(/* ... */)
+const { onSubmit, response, result, Fields } = useHubspotForm(/* config */)
 
 if ($response?.ok && !!$result?.redirectUri) {
   window.location.href = $result.redirectUri
