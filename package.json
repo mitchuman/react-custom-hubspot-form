@@ -1,6 +1,6 @@
 {
 	"name": "react-custom-hubspot-form",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "A React hook to render customizable Hubspot forms",
 	"repository": "https://github.com/nuotsu/react-custom-hubspot-form.git",
 	"keywords": [
