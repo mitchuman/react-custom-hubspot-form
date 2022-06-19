@@ -9,9 +9,14 @@
 	],
 	"author": "Mitchell Christ <mitchell@human.marketing>",
 	"license": "ISC",
-	"main": "index.js",
-	"type": "module",
+	"main": "dist/index.min.js",
+	"scripts": {
+		"build": "esbuild index.min=src/index.jsx --outdir=dist/ --minify"
+	},
 	"dependencies": {
 		"react": "^18.2.0"
+	},
+	"devDependencies": {
+		"esbuild": "^0.14.46"
 	}
 }

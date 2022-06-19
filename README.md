@@ -56,7 +56,7 @@ return (
 )
 ```
 
-Default `<Field>` components are documented [here](/index.js#L71).
+Default `<Field>` components are documented [here](/src/index.js#L71).
 
 ```jsx
 const CustomField = ({ label, value, className, ...props }) => (
@@ -100,7 +100,7 @@ return (
 
 ## Config
 
-Types are documented [here](/types.ts).
+Types are documented [here](/src/types.ts).
 
 ```ts
 type Config = {
