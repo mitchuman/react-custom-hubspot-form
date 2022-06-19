@@ -12,12 +12,15 @@
 	"main": "dist/index.min.js",
 	"type": "module",
 	"scripts": {
+		"serve": "open src/app.html",
+		"dev": "esbuild src/app.jsx --outdir=dist/ --bundle --minify --watch",
 		"build": "esbuild index.min=src/index.jsx --outdir=dist/ --minify"
 	},
 	"dependencies": {
 		"react": "^18.2.0"
 	},
 	"devDependencies": {
-		"esbuild": "^0.14.46"
+		"esbuild": "^0.14.46",
+		"react-dom": "^18.2.0"
 	}
 }
