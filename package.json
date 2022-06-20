@@ -1,30 +1,44 @@
 {
-	"name": "react-custom-hubspot-form",
-	"version": "0.0.11",
-	"description": "A React hook to render customizable Hubspot forms",
-	"repository": "https://github.com/nuotsu/react-custom-hubspot-form.git",
-	"keywords": [
-		"react",
-		"hubspot"
-	],
-	"author": "Mitchell Christ <mitchell@human.marketing>",
-	"license": "ISC",
-	"module": "dist/index.min.js",
-	"type": "module",
-	"scripts": {
-		"build": "rollup -c"
-	},
-	"peerDependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
-		"@babel/preset-react": "^7.17.12",
-		"@rollup/plugin-babel": "^5.3.1",
-		"babel-core": "^6.26.3",
-		"babel-runtime": "^6.26.0",
-		"rollup-plugin-peer-deps-external": "^2.2.4",
-		"rollup-plugin-terser": "^7.0.2",
-		"rollup": "^2.75.7"
-	}
+  "name": "react-custom-hubspot-form",
+  "version": "0.1.0",
+  "description": "A React hook to render customizable Hubspot forms",
+  "repository": "https://github.com/nuotsu/react-custom-hubspot-form.git",
+  "keywords": [
+    "react",
+    "hubspot"
+  ],
+  "author": "Mitchell Christ <mitchell@human.marketing>",
+  "license": "ISC",
+  "module": "dist/index.min.js",
+  "type": "module",
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "rollup -c"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.17.12",
+    "@rollup/plugin-babel": "^5.3.1",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "react-scripts": "^5.0.1",
+    "rollup": "^2.75.7",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

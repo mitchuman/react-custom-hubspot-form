@@ -4,7 +4,11 @@ type Config = {
 	portalId: string
 	formId: string
 	fields: Array<TextField | CheckboxField | SelectField>
+	debug?: boolean
+	apiKey?: string
 }
+
+// field types
 
 type Field = {
 	name: string
@@ -29,9 +33,11 @@ type SelectField = Field & {
 	options: string[]
 }
 
-/* sample config */
+/*
+	Example:
+	useHubspotForm(config)
+*/
 
-// useHubspotForm(config)
 const config: Config = {
 	portalId: '...',
 	formId: '...',
@@ -49,5 +55,7 @@ const config: Config = {
 			value: 'Interstellar',
 		},
 		// ...
-	]
+	],
+	// debug: true,
+	// apiKey: '...',
 }

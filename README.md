@@ -44,19 +44,20 @@ export default () => {
 
 ```jsx
 const { Fields, Form } = useHubspotForm(/* config */)
-const [Name, Movie] = Fields	// order-sensitive (based on `config.fields`)
+const [Name, Movie] = Fields  // order based on `config.fields`
 
 return (
   <Form className="...">
     <Name component={CustomField} />
     <Movie className="..." />
 
-    <button>Vote now!</button>
+    <button type="submit">Vote now!</button>
+    <button type="reset">Reset</button>
   </Form>
 )
 ```
 
-Default `<Field>` components are documented [here](/src/index.js#L71).
+Default `<Field>` components are documented [here](/src/useHubspotForm.jsx#L71).
 
 ```jsx
 const CustomField = ({ label, value, className, ...props }) => (
@@ -78,13 +79,13 @@ const CustomField = ({ label, value, className, ...props }) => (
 ```jsx
 const { onSubmit, response, result, Fields } = useHubspotForm(/* config */)
 
-if ($response?.ok && !!$result?.redirectUri) {
-  window.location.href = $result.redirectUri
+if (response?.ok && !!result?.redirectUri) {
+  window.location.href = result.redirectUri
   return <p>Redirecting...</p>
 }
 
-if ($response?.ok && !!$result?.inlineMessage) {
-  return <div dangerouslySetInnerHTML={{ __html: $result.inlineMessage }} />
+if (response?.ok && !!result?.inlineMessage) {
+  return <div dangerouslySetInnerHTML={{ __html: result.inlineMessage }} />
 }
 
 return (
@@ -98,37 +99,33 @@ return (
 )
 ```
 
+## Debug
+
+Set `config.debug: true` with an `apiKey` to retrieve the API endpoint to help with populating `config.fields`.
+
+```jsx
+useHubspotForm({
+  portalId: '...',
+  formId: '...',
+  // fields: idk yet...,
+
+  debug: true,
+  apiKey: '...',
+})
+
+// open browser console (debug panel) to see the endpoint URL
+```
+
 ## Config
 
-Types are documented [here](/src/types.ts).
+`config` parameters are documented [here](/src/types.ts).
 
-```ts
-type Config = {
-  portalId: string
-  formId: string
-  fields: Array<TextField | CheckboxField | SelectField>
-}
+## Return values
 
-type Field = {
-  name: string
-  label: string
-  required?: boolean
-  // other props can be passed down
-  // e.g. `className`, `pattern`, `aria-*`
-}
-
-type TextField = Field & {
-  type?: 'text' | 'email' | 'textarea'
-  value?: string
-}
-
-type CheckboxField = Field & {
-  type: 'checkbox'
-  value?: boolean
-}
-
-type SelectField = Field & {
-  type: 'select'
-  options: string[]
-}
-```
+|value|description|example|
+|-|-|-|
+|`onSubmit`| Submission handler to use in the native`<form>` tag | `<form onSubmit={onSubmit} />` |
+|`response`| Response object returned from the HubSpot API | `response.ok` |
+|`result`| Resulting object from a successful response | `result.inlineMessage`<br>`result.redirectUri` |
+|`Fields`| Array of inputs as React components used to destructure | `const [First, Second, ...theRest] = Fields` |
+|`Form`| React component with `onSubmit`, `Fields` and a submit button included by default.<br>Setting `children` will override the fields and submit button. | `<Form>...</Form>` |
