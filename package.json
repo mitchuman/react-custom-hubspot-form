@@ -1,6 +1,6 @@
 {
 	"name": "react-custom-hubspot-form",
-	"version": "0.0.6",
+	"version": "0.0.8",
 	"description": "A React hook to render customizable Hubspot forms",
 	"repository": "https://github.com/nuotsu/react-custom-hubspot-form.git",
 	"keywords": [
@@ -9,18 +9,18 @@
 	],
 	"author": "Mitchell Christ <mitchell@human.marketing>",
 	"license": "ISC",
-	"main": "dist/index.min.js",
+	"main": "src/index.jsx",
 	"type": "module",
 	"scripts": {
 		"serve": "open src/app.html",
 		"dev": "esbuild src/app.jsx --outdir=dist/ --bundle --minify --watch",
-		"build": "esbuild index.min=src/index.jsx --outdir=dist/ --minify"
+		"build": "esbuild index.min=src/index.jsx --outdir=dist/ --minify --format=cjs"
 	},
-	"dependencies": {
-		"react": "^18.2.0"
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
 	},
 	"devDependencies": {
-		"esbuild": "^0.14.46",
-		"react-dom": "^18.2.0"
+		"esbuild": "^0.14.46"
 	}
 }

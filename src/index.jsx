@@ -1,8 +1,8 @@
-import React from 'react'
+import { useState } from 'react'
 
 export function useHubspotForm({ portalId, formId, fields }) {
-	const [$response, set$response] = React.useState(null)
-	const [$result, set$result] = React.useState(null)
+	const [$response, set$response] = useState(null)
+	const [$result, set$result] = useState(null)
 
 	async function onSubmit(e) {
 		e.preventDefault()
