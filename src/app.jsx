@@ -1,6 +1,5 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-// import { useHubspotForm } from './index'
 import { useHubspotForm } from '../dist/index.min.js'
 
 const App = () => {
