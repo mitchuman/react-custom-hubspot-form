@@ -57,7 +57,7 @@ return (
 )
 ```
 
-Default `<Field>` components are documented [here](/src/useHubspotForm.jsx#L71).
+Default `<Field>` components are documented [here](/src/useHubspotForm.jsx#86).
 
 ```jsx
 const CustomField = ({ label, value, className, ...props }) => (
@@ -124,7 +124,7 @@ useHubspotForm({
 
 |value|description|example|
 |-|-|-|
-|`onSubmit`| Submission handler to use in the native`<form>` tag | `<form onSubmit={onSubmit} />` |
+|`onSubmit`| Submission handler to use in the native `<form>` tag | `<form onSubmit={onSubmit} />` |
 |`response`| Response object returned from the HubSpot API | `response.ok` |
 |`result`| Resulting object from a successful response | `result.inlineMessage`<br>`result.redirectUri` |
 |`Fields`| Array of inputs as React components used to destructure | `const [First, Second, ...theRest] = Fields` |
