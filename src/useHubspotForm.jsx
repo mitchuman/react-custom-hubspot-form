@@ -99,7 +99,7 @@ const Input = ({ label, className, value, ...props }) => (
 )
 
 const Textarea = ({ label, className, value, ...props }) => (
-	<label htmlFor={props.name}>
+	<label htmlFor={props.name} className={className}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		<textarea
 			id={props.name}
