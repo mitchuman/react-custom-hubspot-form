@@ -1,6 +1,13 @@
 import { useState } from 'react'
 
-export function useHubspotForm({ portalId, formId, fields, debug, apiKey }) {
+export function useHubspotForm({
+	portalId,
+	formId,
+	fields,
+	submitLabel = 'Submit',
+	debug,
+	apiKey
+}) {
 	const [$response, set$response] = useState(null)
 	const [$result, set$result] = useState(null)
 
@@ -47,7 +54,7 @@ export function useHubspotForm({ portalId, formId, fields, debug, apiKey }) {
 		return <form onSubmit={onSubmit} {...props}>
 			{children || <>
 				{Fields?.map((Field, key) => <Field key={key} />)}
-				<button type="submit">Submit</button>
+				<button type="submit">{submitLabel}</button>
 			</>}
 		</form>
 	}

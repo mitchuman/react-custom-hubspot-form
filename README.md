@@ -33,7 +33,8 @@ export default () => {
         value: 'Interstellar',
       },
       // ...
-    ]
+    ],
+    submitLabel: 'Vote now!',
   })
 
   return <Form />

@@ -4,6 +4,7 @@ type Config = {
 	portalId: string
 	formId: string
 	fields: Array<TextField | CheckboxField | SelectField>
+	submitLabel?: string
 	debug?: boolean
 	apiKey?: string
 }
