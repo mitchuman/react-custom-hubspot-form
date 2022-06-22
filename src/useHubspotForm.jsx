@@ -104,7 +104,7 @@ const Textarea = ({ label, className, value, ...props }) => (
 		<textarea
 			id={props.name}
 			placeholder={label}
-			defaulValue={value}
+			defaultValue={value}
 			{...props}
 		/>
 	</label>
