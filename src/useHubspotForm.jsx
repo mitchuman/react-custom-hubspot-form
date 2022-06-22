@@ -94,7 +94,7 @@ function debugHubspot({ formId, apiKey }) {
 
 const Input = ({ label, className, value, ...props }) => (
 	// TODO: add error handling
-	<label htmlFor={props.name} className={className}>
+	<label htmlFor={props.name} className={className} data-type={props.type || 'text'}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		<input
 			id={props.name}
@@ -106,7 +106,7 @@ const Input = ({ label, className, value, ...props }) => (
 )
 
 const Textarea = ({ label, className, value, ...props }) => (
-	<label htmlFor={props.name} className={className}>
+	<label htmlFor={props.name} className={className} data-type={props.type}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		<textarea
 			id={props.name}
@@ -118,7 +118,7 @@ const Textarea = ({ label, className, value, ...props }) => (
 )
 
 const Select = ({ label, options, value = '', className, ...props }) => (
-	<label htmlFor={props.name} className={className}>
+	<label htmlFor={props.name} className={className} data-type={props.type}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		<select id={props.name} defaultValue={value} {...props}>
 			<option value="" disabled>Please select</option>
@@ -130,7 +130,7 @@ const Select = ({ label, options, value = '', className, ...props }) => (
 )
 
 const Checkbox = ({ label, className, value, ...props }) => (
-	<label htmlFor={props.name} className={className}>
+	<label htmlFor={props.name} className={className} data-type={props.type}>
 		<input
 			id={props.name}
 			defaultChecked={value}
