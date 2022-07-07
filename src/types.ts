@@ -24,13 +24,18 @@ type TextField = Field & {
 	value?: string
 }
 
+type SelectField = Field & {
+	type: 'select'
+	options: string[]
+}
+
 type CheckboxField = Field & {
 	type: 'checkbox'
 	value?: boolean
 }
 
-type SelectField = Field & {
-	type: 'select'
+type RadioField = Field & {
+	tyep: 'radio'
 	options: string[]
 }
 

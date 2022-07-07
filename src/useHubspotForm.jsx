@@ -30,6 +30,7 @@ export function useHubspotForm({
 
 	const Fields = fields.map(field => {
 		const Field =
+			field.type === 'radio' ? Radio :
 			field.type === 'checkbox' ? Checkbox :
 			field.type === 'select' ? Select :
 			field.type === 'textarea' ? Textarea :
@@ -92,7 +93,7 @@ function debugHubspot({ formId, apiKey }) {
 
 /* fields */
 
-const Input = ({ label, className, value, ...props }) => (
+const Input = ({ label, value, className, ...props }) => (
 	// TODO: add error handling
 	<label htmlFor={props.name} className={className} data-type={props.type || 'text'}>
 		<small>{label}{props.required && <span>*</span>}</small>
@@ -105,7 +106,7 @@ const Input = ({ label, className, value, ...props }) => (
 	</label>
 )
 
-const Textarea = ({ label, className, value, ...props }) => (
+const Textarea = ({ label, value, className, ...props }) => (
 	<label htmlFor={props.name} className={className} data-type={props.type}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		<textarea
@@ -129,7 +130,7 @@ const Select = ({ label, options, value = '', className, ...props }) => (
 	</label>
 )
 
-const Checkbox = ({ label, className, value, ...props }) => (
+const Checkbox = ({ label, value, className, ...props }) => (
 	<label htmlFor={props.name} className={className} data-type={props.type}>
 		<input
 			id={props.name}
@@ -139,4 +140,20 @@ const Checkbox = ({ label, className, value, ...props }) => (
 		/>
 		{label}
 	</label>
+)
+
+const Radio = ({ label, options, value, className, ...props }) => (
+	<div>
+		<small>{label}{props.required && <span>*</span>}</small>
+		{options?.map((option, key) => (
+			<label key={key}>
+				<input
+					defaultChecked={option}
+					defaultValue={value}
+					{...props}
+				/>
+				{option}
+			</label>
+		))}
+	</div>
 )

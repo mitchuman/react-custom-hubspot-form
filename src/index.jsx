@@ -19,6 +19,12 @@ const App = () => {
         ],
         value: 'Interstellar',
       },
+      {
+        name: 'watch_again',
+        label: 'Watch again?',
+        type: 'radio',
+        options: ['Yes', 'No'],
+      }
     ],
     debug: true,
     apiKey: process.env.REACT_APP_API_KEY,
