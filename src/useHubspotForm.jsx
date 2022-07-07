@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Input, Textarea, Select, Checkbox, Radio } from './fields.jsx'
 
 export function useHubspotForm({
 	portalId,
@@ -90,70 +91,3 @@ function debugHubspot({ formId, apiKey }) {
 
 	console.debug(`%c useHubspotForm %cdebug: true\n\n${ output }`, 'background-color: #fff; color: #000;')
 }
-
-/* fields */
-
-const Input = ({ label, value, className, ...props }) => (
-	// TODO: add error handling
-	<label htmlFor={props.name} className={className} data-type={props.type || 'text'}>
-		<small>{label}{props.required && <span>*</span>}</small>
-		<input
-			id={props.name}
-			placeholder={label}
-			defaultValue={value}
-			{...props}
-		/>
-	</label>
-)
-
-const Textarea = ({ label, value, className, ...props }) => (
-	<label htmlFor={props.name} className={className} data-type={props.type}>
-		<small>{label}{props.required && <span>*</span>}</small>
-		<textarea
-			id={props.name}
-			placeholder={label}
-			defaultValue={value}
-			{...props}
-		/>
-	</label>
-)
-
-const Select = ({ label, options, value = '', className, ...props }) => (
-	<label htmlFor={props.name} className={className} data-type={props.type}>
-		<small>{label}{props.required && <span>*</span>}</small>
-		<select id={props.name} defaultValue={value} {...props}>
-			<option value="" disabled>Please select</option>
-			{options?.map((option, key) => (
-				<option value={option} key={key}>{option}</option>
-			))}
-		</select>
-	</label>
-)
-
-const Checkbox = ({ label, value, className, ...props }) => (
-	<label htmlFor={props.name} className={className} data-type={props.type}>
-		<input
-			id={props.name}
-			defaultChecked={value}
-			defaultValue={value}
-			{...props}
-		/>
-		{label}
-	</label>
-)
-
-const Radio = ({ label, options, value, className, ...props }) => (
-	<div>
-		<small>{label}{props.required && <span>*</span>}</small>
-		{options?.map((option, key) => (
-			<label key={key}>
-				<input
-					defaultChecked={option}
-					defaultValue={value}
-					{...props}
-				/>
-				{option}
-			</label>
-		))}
-	</div>
-)
