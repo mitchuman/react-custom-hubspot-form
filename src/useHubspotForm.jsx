@@ -72,10 +72,23 @@ export function useHubspotForm({
 
 async function submitHubspot({ portalId, formId, fields }) {
 	const url = `https://api.hsforms.com/submissions/v3/integration/submit/${ portalId }/${ formId }`
+
+	const context = (typeof document === 'undefined' || typeof location === 'undefined')
+		? {} : {
+			hutk: document.cookie.match(/hubspotutk=([^;]+)/)?.[1],
+			pageUri: location.href,
+			pageName: document.title,
+		}
+
+	console.log(context)
+
 	return await fetch(url, {
 		method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ fields })
+			body: JSON.stringify({
+				fields,
+				context,
+			})
 	})
 }
 
