@@ -80,8 +80,6 @@ async function submitHubspot({ portalId, formId, fields }) {
 			pageName: document.title,
 		}
 
-	console.log(context)
-
 	return await fetch(url, {
 		method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
