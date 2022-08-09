@@ -4,7 +4,6 @@ export const Input = ({ label, value, className, ...props }) => (
 	<label htmlFor={props.name} className={className} data-type={props.type || 'text'}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		<input
-			ref={ref}
 			id={props.name}
 			placeholder={label}
 			defaultValue={value}
