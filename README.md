@@ -58,7 +58,7 @@ return (
 )
 ```
 
-Default `<Field>` components are documented [here](/src/useHubspotForm.jsx#L86).
+Default `<Field>` components are documented [here](/src/fields.jsx).
 
 ```jsx
 const CustomField = ({ label, value, className, ...props }) => (
