@@ -1,18 +1,21 @@
+import { forwardRef } from 'react'
+
 // TODO: add error handling
 
-export const Input = ({ label, value, className, ...props }) => (
+export const Input = forwardRef(({ label, value, className, ...props }, ref) => (
 	<label htmlFor={props.name} className={className} data-type={props.type || 'text'}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		<input
+			ref={ref}
 			id={props.name}
 			placeholder={label}
 			defaultValue={value}
 			{...props}
 		/>
 	</label>
-)
+))
 
-export const Textarea = ({ label, value, className, ...props }) => (
+export const Textarea = forwardRef(({ label, value, className, ...props }, ref) => (
 	<label htmlFor={props.name} className={className} data-type={props.type}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		<textarea
@@ -22,9 +25,9 @@ export const Textarea = ({ label, value, className, ...props }) => (
 			{...props}
 		/>
 	</label>
-)
+))
 
-export const Select = ({ label, options, value = '', className, ...props }) => (
+export const Select = forwardRef(({ label, options, value = '', className, ...props }, ref) => (
 	<label htmlFor={props.name} className={className} data-type={props.type}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		<select id={props.name} defaultValue={value} {...props}>
@@ -34,9 +37,9 @@ export const Select = ({ label, options, value = '', className, ...props }) => (
 			))}
 		</select>
 	</label>
-)
+))
 
-export const Checkbox = ({ label, value, className, ...props }) => (
+export const Checkbox = forwardRef(({ label, value, className, ...props }, ref) => (
 	<label htmlFor={props.name} className={className} data-type={props.type}>
 		<input
 			id={props.name}
@@ -46,9 +49,9 @@ export const Checkbox = ({ label, value, className, ...props }) => (
 		/>
 		{label}
 	</label>
-)
+))
 
-export const Radio = ({ label, options, value, className, ...props }) => (
+export const Radio = forwardRef(({ label, options, value, className, ...props }, ref) => (
 	<div className={className} data-type={props.type}>
 		<small>{label}{props.required && <span>*</span>}</small>
 		{options?.map((option, key) => (
@@ -62,4 +65,4 @@ export const Radio = ({ label, options, value, className, ...props }) => (
 			</label>
 		))}
 	</div>
-)
+))

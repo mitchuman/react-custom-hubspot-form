@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { useHubspotForm } from './useHubspotForm'
 
 const App = () => {
-  const { Form, Fields  } = useHubspotForm({
+  const { Form, Fields } = useHubspotForm({
     portalId: process.env.REACT_APP_PORTAL_ID,
     formId: process.env.REACT_APP_FORM_ID,
     fields: [
